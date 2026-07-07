@@ -1,6 +1,6 @@
 import multer from 'multer'
 
-const diskStorage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function(req,res, cb){
         cb(null, "public")
     },
@@ -12,5 +12,5 @@ const diskStorage = multer.diskStorage({
 
 export const upload = multer({
     storage,
-    limits:{fileSize:5 * 1024 * 1024},
+    limits:{fileSize: 5 * 1024 * 1024},
 });
